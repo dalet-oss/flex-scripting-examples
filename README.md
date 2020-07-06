@@ -1,13 +1,7 @@
-This is an example project demonstrates how Flex external scripts can be written, unit tested and compiled into a JAR, ready to
- be used in "external" actions (e.g. JEF External Script).
+This repository contains 2 projects that can help springboard your development of Flex scripts:
 
-To use this project you will need to install [Gradle](https://gradle.org/) (v6.5 or above).
-
-The folder `src/main/groovy` contains an example class CreateNewAssetScript, which creates a simple placeholder asset. The
- corresponding unit test can be found in `test/main/groovy`
+* [External Scripts](ExternalScripts/README.md) - An example project on how to write scripts that are assembled into JARs and referenced from Flex scripting actions via the `JAR File URLs` configuration field
+* [UsingAnIdeToWriteScripts](UsingAnIdeToWriteScripts/README.md) - A project that demonstrates how to write Flex scripts using an IDE in order to leverage code completion, unit testing and source control, before being copy and pasted into Flex.
  
-To build the project, which executed the unit tests and creates the JAR, from the command line, run:
-```
-gradle build
-```
-The built JAR file can be found in `build/libs/`
+ 
+ 

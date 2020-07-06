@@ -1,0 +1,28 @@
+plugins {
+    id 'groovy'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url "https://nexus-internal.ooflex.net/repository/"
+    }
+    maven {
+        url "https://nexus-internal.ooflex.net/repository/maven"
+    }
+    mavenCentral()
+}
+
+dependencies {
+
+    // Spock currently isn't compatible with Groovy v3 (which is the version used by Flex)
+    implementation 'org.codehaus.groovy:groovy-all:2.4.1'
+    implementation('com.ooyala.flex:flex-actionplugins-commons:3.2.79') {
+        exclude group:'org.codehaus.groovy', module: 'groovy-all'
+    }
+
+    testImplementation 'org.spockframework:spock-core:1.0-groovy-2.4'
+    testImplementation 'cglib:cglib-nodep:3.3.0'
+    testImplementation 'org.objenesis:objenesis:3.1'
+
+}
