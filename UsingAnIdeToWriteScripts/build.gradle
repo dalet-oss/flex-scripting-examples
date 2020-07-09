@@ -17,7 +17,7 @@ dependencies {
 
     // Spock currently isn't compatible with Groovy v3 (which is the version used by Flex)
     implementation 'org.codehaus.groovy:groovy-all:2.4.1'
-    implementation('com.ooyala.flex:flex-actionplugins-commons:3.2.79') {
+    implementation('com.ooyala.flex:flex-actionplugins-commons:3.2.92') {
         exclude group:'org.codehaus.groovy', module: 'groovy-all'
     }
 
