@@ -5,12 +5,16 @@ plugins {
 repositories {
     mavenLocal()
     maven {
-        url "https://nexus-internal.ooflex.net/repository/"
+        url 'https://nexus-internal.ooflex.net/repository/'
     }
     maven {
-        url "https://nexus-internal.ooflex.net/repository/maven"
+        url 'https://nexus-internal.ooflex.net/repository/maven'
     }
     mavenCentral()
+}
+
+jar {
+    version='1.0'
 }
 
 dependencies {
