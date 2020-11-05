@@ -14,7 +14,9 @@ repositories {
 }
 
 jar {
-    version='1.0'
+    archiveVersion='1.0'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 dependencies {

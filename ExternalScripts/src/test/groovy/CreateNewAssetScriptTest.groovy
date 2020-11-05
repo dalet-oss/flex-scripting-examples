@@ -1,3 +1,4 @@
+import com.flex.CreateNewAssetScript
 import com.ooyala.flex.model.asset.create.NewAssetPlaceholder
 import com.ooyala.flex.sdk.FlexSdkClient
 import com.ooyala.flex.sdk.services.enterprise.AssetService
