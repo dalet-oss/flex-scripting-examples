@@ -1,7 +1,7 @@
 import com.ooyala.flex.model.asset.create.NewAssetPlaceholder
 import com.ooyala.flex.plugins.GroovyScriptContext
-import com.ooyala.flex.plugins.PluginCommand
 import com.ooyala.flex.sdk.FlexSdkClient
+
 
 class CreateNewAssetScript {
 

@@ -3,6 +3,7 @@ import com.ooyala.flex.sdk.FlexSdkClient
 import com.ooyala.flex.sdk.services.enterprise.AssetService
 import spock.lang.Specification
 
+
 class CreateNewAssetScriptTest extends Specification {
 
     def "new asset creation"() {
