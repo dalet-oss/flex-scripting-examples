@@ -6,7 +6,7 @@ jdk:
 
 branches:
   only:
-    - get-travis-working
+    - master
 
 # See https://docs.travis-ci.com/user/languages/groovy/#gradle-caching
 before_cache:
