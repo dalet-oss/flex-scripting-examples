@@ -18,16 +18,16 @@ cache:
 
 install:
   - pushd ExternalScripts
-  - ./gradlew assemble
+  - ./gradlew assemble -PnexusExtUsername=${NEXUS_EXT_USERNAME} -PnexusExtPassword=${NEXUS_EXT_PASSWORD}
   - popd
   - pushd UseingAnIdeToWriteScripts
-  - ./gradlew assemble
+  - ./gradlew assemble -PnexusExtUsername=${NEXUS_EXT_USERNAME} -PnexusExtPassword=${NEXUS_EXT_PASSWORD}
   - popd
 
 script:
   - pushd ExternalScripts
-  - ./gradlew check
+  - ./gradlew check -PnexusExtUsername=${NEXUS_EXT_USERNAME} -PnexusExtPassword=${NEXUS_EXT_PASSWORD}
   - popd
   - pushd UseingAnIdeToWriteScripts
-  - ./gradlew check
+  - ./gradlew check -PnexusExtUsername=${NEXUS_EXT_USERNAME} -PnexusExtPassword=${NEXUS_EXT_PASSWORD}
   - popd
