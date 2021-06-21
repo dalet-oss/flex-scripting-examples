@@ -16,4 +16,4 @@ To build the project, which executes the unit tests and creates the JAR, from th
 ```
 ./gradlew build
 ```
-The built JAR file can be found in `build/libs/`.
+The built JAR file can be found in the `build/libs/` directory.
