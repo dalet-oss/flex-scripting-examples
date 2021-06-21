@@ -1,0 +1,33 @@
+language: groovy
+os: linux
+jdk:
+  - openjdk8
+  - openjdk11
+
+branches:
+  only:
+    - get-travis-working
+
+# See https://docs.travis-ci.com/user/languages/groovy/#gradle-caching
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+install:
+  - pushd ExternalScripts
+  - ./gradlew assemble
+  - popd
+  - pushd UseingAnIdeToWriteScripts
+  - ./gradlew assemble
+  - popd
+
+script:
+  - pushd ExternalScripts
+  - ./gradlew check
+  - popd
+  - pushd UseingAnIdeToWriteScripts
+  - ./gradlew check
+  - popd
