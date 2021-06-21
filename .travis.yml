@@ -20,7 +20,7 @@ install:
   - pushd ExternalScripts
   - ./gradlew assemble -PnexusExtUsername=${NEXUS_EXT_USERNAME} -PnexusExtPassword=${NEXUS_EXT_PASSWORD}
   - popd
-  - pushd UseingAnIdeToWriteScripts
+  - pushd UsingAnIdeToWriteScripts
   - ./gradlew assemble -PnexusExtUsername=${NEXUS_EXT_USERNAME} -PnexusExtPassword=${NEXUS_EXT_PASSWORD}
   - popd
 
@@ -28,6 +28,6 @@ script:
   - pushd ExternalScripts
   - ./gradlew check -PnexusExtUsername=${NEXUS_EXT_USERNAME} -PnexusExtPassword=${NEXUS_EXT_PASSWORD}
   - popd
-  - pushd UseingAnIdeToWriteScripts
+  - pushd UsingAnIdeToWriteScripts
   - ./gradlew check -PnexusExtUsername=${NEXUS_EXT_USERNAME} -PnexusExtPassword=${NEXUS_EXT_PASSWORD}
   - popd
