@@ -4,13 +4,21 @@ plugins {
 
 repositories {
     mavenLocal()
+
+    // Users outside Dalet should use this configuration block
+    // In this case invoke like the following, with the relevant environment variables set:
+    //     ./gradlew clean assemble -PnexusExtUsername=${NEXUS_EXT_USERNAME} -PnexusExtPassword=${NEXUS_EXT_PASSWORD}
     maven {
-        url 'https://nexus-internal.ooflex.net/repository/'
-    }
-    maven {
-        url 'https://nexus-internal.ooflex.net/repository/maven'
+        name = 'nexusExt'
+        credentials(PasswordCredentials) // looks for nexusExtUsername and nexusExtPassword parameters
+        url = 'https://nexus-ext.ooflex.net/repository/maven'
     }
     mavenCentral()
+
+    // Users within Dalet should use this configuration block
+//    maven {
+//        url 'https://nexus-internal.ooflex.net/repository/maven'
+//    }
 }
 
 jar {
@@ -20,13 +28,11 @@ jar {
 }
 
 dependencies {
-
     // Gradle currently isn't compatible with Groovy v3 (which is the version used by Flex)
     implementation 'org.codehaus.groovy:groovy-all:2.4.1'
-    implementation 'com.ooyala.flex:flex-sdk-external:3.4.0'
+    implementation 'com.ooyala.flex:flex-sdk-external:3.4.4'
 
     testImplementation 'org.spockframework:spock-core:1.0-groovy-2.4'
     testImplementation 'cglib:cglib-nodep:3.3.0'
     testImplementation 'org.objenesis:objenesis:3.1'
-
 }
