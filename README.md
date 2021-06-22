@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/dalet-oss/flex-scripting-examples.svg?branch=master)](https://travis-ci.com/dalet-oss/flex-scripting-examples)
+
 This repository contains 2 projects that can help springboard your development of Flex scripts:
 
 * [External Scripts](ExternalScripts/README.md) - An example project on how to write scripts that are assembled into
