@@ -8,17 +8,17 @@ repositories {
     // Users outside Dalet should use this configuration block
     // In this case invoke like the following, with the relevant environment variables set:
     //     ./gradlew clean assemble -PnexusExtUsername=${NEXUS_EXT_USERNAME} -PnexusExtPassword=${NEXUS_EXT_PASSWORD}
-    maven {
-        name = 'nexusExt'
-        credentials(PasswordCredentials) // looks for nexusExtUsername and nexusExtPassword parameters
-        url = 'https://nexus-ext.ooflex.net/repository/maven'
-    }
+//    maven {
+//        name = 'nexusExt'
+//        credentials(PasswordCredentials) // looks for nexusExtUsername and nexusExtPassword parameters
+//        url = 'https://nexus-ext.ooflex.net/repository/maven'
+//    }
     mavenCentral()
 
     // Users within Dalet should use this configuration block
-//    maven {
-//        url 'https://nexus-internal.ooflex.net/repository/maven'
-//    }
+    maven {
+        url 'https://nexus-internal.ooflex.net/repository/maven'
+    }
 }
 
 jar {
@@ -34,4 +34,8 @@ dependencies {
     testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
     testImplementation 'cglib:cglib-nodep:3.3.0'
     testImplementation 'org.objenesis:objenesis:3.2'
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
 }
