@@ -28,11 +28,10 @@ jar {
 }
 
 dependencies {
-    // Gradle currently isn't compatible with Groovy v3 (which is the version used by Flex)
-    implementation 'org.codehaus.groovy:groovy-all:2.5.14'
+    implementation 'org.codehaus.groovy:groovy-all:3.0.9'
     implementation 'com.ooyala.flex:flex-sdk-external:4.0.27'
 
-    testImplementation 'org.spockframework:spock-core:1.0-groovy-2.4'
+    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
     testImplementation 'cglib:cglib-nodep:3.3.0'
     testImplementation 'org.objenesis:objenesis:3.1'
 }
