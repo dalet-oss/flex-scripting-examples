@@ -15,6 +15,7 @@ repositories {
     }
     mavenCentral()
 
+    // Users within Dalet should use this configuration block
 //    maven {
 //        url 'https://nexus-internal.ooflex.net/repository/maven'
 //    }
