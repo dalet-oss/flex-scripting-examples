@@ -28,8 +28,8 @@ jar {
 }
 
 dependencies {
-    implementation 'org.codehaus.groovy:groovy-all:3.0.9'
-    implementation 'com.ooyala.flex:flex-sdk-external:5.0.6'
+    implementation 'org.codehaus.groovy:groovy-all:3.0.10'
+    implementation 'com.ooyala.flex:flex-sdk-external:5.2.10.2'
 
     testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
     testImplementation 'cglib:cglib-nodep:3.3.0'
