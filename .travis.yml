@@ -7,7 +7,7 @@ jdk:
 branches:
   only:
     - master
-    - release/.*
+    - /release\/.*/
 
 # See https://docs.travis-ci.com/user/languages/groovy/#gradle-caching
 before_cache:
