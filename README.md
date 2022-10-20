@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/dalet-oss/flex-scripting-examples.svg?branch=master)](https://travis-ci.com/dalet-oss/flex-scripting-examples)
+[![Build Status](https://app.travis-ci.com/dalet-oss/flex-scripting-examples.svg?branch=master)](https://app.travis-ci.com/dalet-oss/flex-scripting-examples)
 
 This repository contains 2 projects that can help springboard your development of Flex scripts:
 
