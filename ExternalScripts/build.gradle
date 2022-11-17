@@ -11,7 +11,7 @@ repositories {
     maven {
         name = 'nexusExt'
         credentials(PasswordCredentials) // looks for nexusExtUsername and nexusExtPassword parameters
-        url = 'https://nexus-ext.ooflex.net/repository/maven'
+        url = 'https://nexus-ext.services.ooflex.net/repository/maven'
     }
     mavenCentral()
 
