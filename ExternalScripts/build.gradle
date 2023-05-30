@@ -29,7 +29,7 @@ jar {
 
 dependencies {
     implementation 'org.apache.groovy:groovy-all:4.0.6'
-    implementation 'com.ooyala.flex:flex-sdk-external:6.0.2'
+    implementation 'com.ooyala.flex:flex-sdk-external:6.0.3'
 
     testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
     testImplementation 'cglib:cglib-nodep:3.3.0'
