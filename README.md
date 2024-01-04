@@ -1,4 +1,5 @@
-[![Build Status](https://app.travis-ci.com/dalet-oss/flex-scripting-examples.svg?branch=master)](https://app.travis-ci.com/dalet-oss/flex-scripting-examples)
+[![CI Build](https://github.com/dalet-oss/flex-scripting-examples/actions/workflows/ci-build.yml/badge.svg)](https://github.com/dalet-oss/flex-scripting-examples/actions/workflows/ci-build.yml) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.dalet-oss/flex-scripting-examples/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.dalet-oss/flex-scripting-examples) [![Licence](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/dalet-oss/flex-scripting-examples/blob/master/LICENSE)
+---
 
 This repository contains 2 projects that can help springboard your development of Flex scripts:
 

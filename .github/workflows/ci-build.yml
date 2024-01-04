@@ -1,0 +1,49 @@
+name: 'CI Build'
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [ opened, reopened, edited ]
+    branches:
+      - master
+
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: false
+
+jobs:
+  compile-and-test:
+    strategy:
+      matrix:
+        # TODO: add support for Java 21; this will require a Gradle upgrade
+        java-version: [8, 11, 17]
+        os: [ubuntu-latest, macos-latest]
+        module: [ExternalScripts, UsingAnIdeToWriteScripts]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java and Maven
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ matrix.java-version }}
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
+      - name: Assemble
+        run: cd ${{ matrix.module }}; ./gradlew assemble -PnexusExtUsername=${NEXUS_EXT_USERNAME} -PnexusExtPassword=${NEXUS_EXT_PASSWORD}
+        env:
+          NEXUS_EXT_USERNAME: ${{ vars.NEXUS_EXT_USERNAME }}
+          NEXUS_EXT_PASSWORD: ${{ secrets.NEXUS_EXT_PASSWORD }}
+
+      - name: Check
+        run: cd ${{ matrix.module }}; ./gradlew check -PnexusExtUsername=${NEXUS_EXT_USERNAME} -PnexusExtPassword=${NEXUS_EXT_PASSWORD}
+        env:
+          NEXUS_EXT_USERNAME: ${{ vars.NEXUS_EXT_USERNAME }}
+          NEXUS_EXT_PASSWORD: ${{ secrets.NEXUS_EXT_PASSWORD }}
