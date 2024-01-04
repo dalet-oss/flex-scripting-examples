@@ -21,11 +21,15 @@ repositories {
 //    }
 }
 
-jar {
-    archiveVersion = '1.0'
+java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }
+
+jar {
+    archiveVersion = '1.0'
+}
+
 
 dependencies {
     implementation 'org.apache.groovy:groovy-all:4.0.6'
