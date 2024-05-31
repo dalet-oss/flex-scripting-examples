@@ -3,11 +3,12 @@ import com.ooyala.flex.plugins.GroovyScriptContext
 import com.ooyala.flex.sdk.FlexSdkClient
 
 
+
 def execute(FlexSdkClient flexSdkClient, GroovyScriptContext context) {
 
     def assetService = flexSdkClient.getAssetService()
 
-    NewAssetPlaceholder asset = NewAssetPlaceholder.builder()
+    def asset = NewAssetPlaceholder.builder()
             .type("media-asset")
             .name("demo asset")
             .build()
@@ -15,4 +16,3 @@ def execute(FlexSdkClient flexSdkClient, GroovyScriptContext context) {
     assetService.createAsset(asset)
 
 }
-
