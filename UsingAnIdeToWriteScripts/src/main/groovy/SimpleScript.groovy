@@ -5,8 +5,8 @@ import com.ooyala.flex.plugins.actions.lock.ScriptingLockManager
 import com.ooyala.flex.sdk.FlexSdkClient
 
 
-def execute(List<FlexObjectReference> objectRefs, FlexSdkClient sdkClient, GroovyScriptContext context,
-            ScriptingLockManager lockManager) {
+def execute(FlexSdkClient sdkClient, GroovyScriptContext context, ScriptingLockManager lockManager,
+            List<FlexObjectReference> objectRefs) {
 
     def assetService = sdkClient.getAssetService()
 
