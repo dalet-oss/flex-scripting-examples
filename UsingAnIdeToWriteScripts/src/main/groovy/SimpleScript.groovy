@@ -5,10 +5,10 @@ import com.ooyala.flex.plugins.actions.lock.ScriptingLockManager
 import com.ooyala.flex.sdk.FlexSdkClient
 
 
-def execute(FlexSdkClient sdkClient, GroovyScriptContext context, ScriptingLockManager lockManager,
+def execute(FlexSdkClient flexSdkClient, GroovyScriptContext context, ScriptingLockManager lockManager,
             List<FlexObjectReference> objectRefs) {
 
-    def assetService = sdkClient.getAssetService()
+    def assetService = flexSdkClient.getAssetService()
 
     def asset = NewAssetPlaceholder.builder()
             .type("media-asset")
