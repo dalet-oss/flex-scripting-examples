@@ -3,9 +3,10 @@ import com.ooyala.flex.model.asset.create.NewAssetPlaceholder
 import com.ooyala.flex.plugins.GroovyScriptContext
 import com.ooyala.flex.plugins.actions.lock.ScriptingLockManager
 import com.ooyala.flex.sdk.FlexSdkClient
+import com.ooyala.flex.plugins.actions.impl.message.http.response.HttpResponse;
 
 def execute(FlexSdkClient flexSdkClient, GroovyScriptContext context, ScriptingLockManager lockManager,
-            List<FlexObjectReference> objectRefs, HttpRequestMessage) {
+            List<FlexObjectReference> objectRefs, HttpResponse httpResponse) {
 
     def assetService = flexSdkClient.getAssetService()
 
