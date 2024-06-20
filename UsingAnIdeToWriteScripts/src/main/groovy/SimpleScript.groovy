@@ -15,6 +15,8 @@ def execute(FlexSdkClient flexSdkClient, GroovyScriptContext context, ScriptingL
             .name("demo asset")
             .build()
 
-    //assetService.createAsset(asset)
+    assetService.createAsset(asset)
+
+    // #{new Integer(variables['audioChannelCount'])}
 
 }
