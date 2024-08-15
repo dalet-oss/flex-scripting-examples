@@ -7,5 +7,5 @@ import com.ooyala.flex.plugins.actions.service.scripting.lock.ScriptingLockManag
 
 def execute(FlexSdkClient flexSdkClient, GroovyScriptContext context, ScriptingLockManager lockManager,
             List<FlexObjectReference> objectRefs, HttpResponse httpResponse) {
-    return "trudfsdfe"
+    return true
 }
