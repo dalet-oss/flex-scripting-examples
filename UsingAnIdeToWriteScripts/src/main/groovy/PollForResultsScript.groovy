@@ -1,3 +1,6 @@
+import com.ooyala.flex.jobexecutor.dto.FlexObjectReference
+import com.ooyala.flex.plugins.actions.impl.message.http.response.HttpResponse
+import com.ooyala.flex.plugins.actions.service.scripting.lock.ScriptingLockManager
 
 
 def execute(FlexSdkClient flexSdkClient, GroovyScriptContext context, ScriptingLockManager lockManager,
