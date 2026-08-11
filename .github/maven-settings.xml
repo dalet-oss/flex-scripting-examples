@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+  <servers>
+    <server>
+      <id>nexusExt</id>
+      <username>${env.NEXUS_EXT_USERNAME}</username>
+      <password>${env.NEXUS_EXT_PASSWORD}</password>
+    </server>
+  </servers>
+  <profiles>
+    <profile>
+      <id>nexusExt</id>
+      <repositories>
+        <repository>
+          <id>nexusExt</id>
+          <name>External Dalet Nexus</name>
+          <url>https://nexus-ext.services.ooflex.net/repository/maven</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>nexusExt</activeProfile>
+  </activeProfiles>
+</settings>
