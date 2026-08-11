@@ -1,27 +1,33 @@
 import com.ooyala.flex.model.asset.create.NewAssetPlaceholder
 import com.ooyala.flex.sdk.FlexSdkClient
 import com.ooyala.flex.sdk.services.enterprise.AssetService
-import spock.lang.Specification
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.Mock
+import org.mockito.junit.jupiter.MockitoExtension
 
+import static org.mockito.ArgumentMatchers.any
+import static org.mockito.Mockito.verify
+import static org.mockito.Mockito.when
 
-class CreateNewAssetScriptTest extends Specification {
+@ExtendWith(MockitoExtension.class)
+class CreateNewAssetScriptTest {
 
-    def "new asset creation"() {
+    @Mock
+    FlexSdkClient flexSdkClient
 
-        FlexSdkClient flexSdkClient = Mock(FlexSdkClient)
-        AssetService assetService = Mock(AssetService)
-        CreateNewAssetScript target = new CreateNewAssetScript()
+    @Mock
+    AssetService assetService
 
-        given:
-        flexSdkClient.getAssetService() >> assetService
-        target.setFlexSdkClient(flexSdkClient)
+    @Test
+    void createsNewAsset() {
+        when(flexSdkClient.getAssetService()).thenReturn(assetService)
 
-        when:
+        def target = new CreateNewAssetScript()
+        target.flexSdkClient = flexSdkClient
+
         target.execute()
 
-        then:
-        1 * assetService.createAsset(_ as NewAssetPlaceholder)
-
+        verify(assetService).createAsset(any(NewAssetPlaceholder.class))
     }
-
 }
