@@ -15,13 +15,14 @@ The example uses Java 21, matching the Flex service that executes Groovy scripts
 Maven registers `src/main/groovy` and `src/test/groovy` as source roots. IntelliJ should therefore provide Groovy and
 Flex SDK code completion without a separately downloaded Groovy SDK.
 
-## Nexus credentials
+## Accessing the Flex SDK
 
-The Flex SDK is hosted in the Flex Nexus repository. You can add Nexus directly as a Maven repository in IntelliJ IDEA
-under **Settings | Build, Execution, Deployment | Build Tools | Maven | Repositories**.
+The Flex SDK is hosted in the Dalet Nexus repository. Users with access to Dalet Nexus can add it directly as a Maven
+repository in IntelliJ IDEA under **Settings | Build, Execution, Deployment | Build Tools | Maven | Repositories**.
 
-The preferred option is to configure Nexus as a mirror in `~/.m2/settings.xml`. This applies consistently to Maven on
-the command line and to IntelliJ IDEA without adding machine-specific configuration to this repository:
+The preferred option for users with access is to configure Nexus as a mirror in `~/.m2/settings.xml`. This applies
+consistently to Maven on the command line and to IntelliJ IDEA without adding machine-specific configuration to this
+repository:
 
 ```xml
 <settings>
@@ -36,7 +37,24 @@ the command line and to IntelliJ IDEA without adding machine-specific configurat
 </settings>
 ```
 
-Dalet developers can use the corresponding internal Nexus URL in their system-level Maven configuration.
+### External users without access to Dalet Nexus
+
+Contact your Dalet representative to request access to the Flex SDK dependency. If Nexus access is not available,
+Dalet will provide both files for the appropriate SDK version:
+
+* `flex-sdk-external-<version>.jar`
+* `flex-sdk-external-<version>.pom`, the flattened POM containing the resolved dependency versions
+
+Install the JAR and its flattened POM into your local Maven repository:
+
+```shell
+mvn install:install-file \
+  -Dfile=flex-sdk-external-<version>.jar \
+  -DpomFile=flex-sdk-external-<version>.pom
+```
+
+Keep the standard `flex-sdk-external` dependency in `pom.xml` and set `flex-sdk.version` to the version supplied by
+Dalet. Maven will then use the locally installed SDK and its flattened dependency metadata.
 
 ## Example script
 
