@@ -16,7 +16,7 @@
 
     <!-- Version of the public Flex SDK that provides code completion for Flex classes and methods. -->
     <!-- Tip: use Confluence "Flex Release / Update Notes" page to find the SDK version for your Flex version. -->
-    <flex-sdk.version>12.11.30</flex-sdk.version>
+    <flex-sdk.version>12.13.2-2-g2b3bb87-PR-654</flex-sdk.version>
 
     <!-- JUnit and Mockito are used only to run the example unit test. -->
     <junit-jupiter.version>5.12.2</junit-jupiter.version>
